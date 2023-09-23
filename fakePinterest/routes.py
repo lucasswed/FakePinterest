@@ -49,7 +49,7 @@ def perfil(id):
         return render_template('perfil.html', usuario=current_user, form=form_foto)
     else:
         usuario = Usuario.query.get(int(id))
-        return render_template('perfil.html', id=usuario.id, form=None)
+        return render_template('perfil.html', usuario=usuario, form=None)
 
 @app.route('/logout')
 @login_required
